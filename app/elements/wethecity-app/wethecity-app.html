@@ -1,0 +1,87 @@
+<link href="../paper-tabs/paper-tabs.html" rel="import">
+<link href="../paper-tabs/paper-tab.html" rel="import">
+<link href="../core-pages/core-pages.html" rel="import">
+
+<polymer-element name="my-element">
+
+  <template>
+    <style>
+      #design_host {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+      }
+      #section {
+        width: 420px;
+        height: 630px;
+        border: 5px solid rgb(204, 204, 204);
+        left: 640px;
+        top: 140px;
+        position: absolute;
+      }
+      #paper_tabs {
+        background-color: rgb(0, 188, 212);
+        color: rgb(255, 255, 255);
+        box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
+      }
+      #paper_tab2 {
+        width: 120px;
+        height: 40px;
+      }
+      #paper_tabs1 {
+        width: 480px;
+        background-color: rgb(0, 188, 212);
+        color: rgb(255, 255, 255);
+        box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
+        left: 1980px;
+        top: 1010px;
+      }
+      #paper_tab3 {
+        width: 120px;
+        height: 40px;
+        left: 2000px;
+        top: 970px;
+      }
+      #core_pages {
+        width: 100%;
+        height: 100%;
+        border: 1px solid silver;
+        left: 0px;
+        top: 0px;
+        position: absolute;
+      }
+    </style>
+    <section id="section" layout vertical>
+      <paper-tabs noink nobar selected="0" selectedindex="0" id="paper_tabs" horizontal center layout>
+        <paper-tab id="paper_tab" inline flex center-center horizontal layout active>ITEM ONE</paper-tab>
+        <paper-tab id="paper_tab1" inline flex center-center horizontal layout>ITEM TWO</paper-tab>
+        <paper-tab id="paper_tab2" inline flex center-center horizontal layout>TAB</paper-tab>
+      </paper-tabs>
+      <section id="section1" flex relative>
+        <core-pages selected="{{ $.paper_tabs.selected }}" selectedindex="0" notap id="core_pages">
+          <section id="section1" active>
+            <core-drawer-panel transition id="core_drawer_panel" touch-action one flex>
+              <section id="section4" drawer>
+                </section>
+              <section id="section5" main>
+                <google-map latitude="37.74791482485267" longitude="-122.39044189453125" zoom="12" id="google_map"></google-map>
+              </section>
+            </core-drawer-panel>
+          </section>
+          <section id="section2">Page Two</section>
+          <section id="section3">Page Three</section>
+        </core-pages>
+      </section>
+    </section>
+  </template>
+
+  <script>
+
+    Polymer({
+
+    });
+
+  </script>
+
+</polymer-element>
